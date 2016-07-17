@@ -1,0 +1,95 @@
+@CHARSET "UTF-8";
+/* 위치 조정 */
+ul.search{
+	margin:0;
+	padding:0;
+	position:absolute;
+	top:20%;
+	left:35%;
+	list-style:none;
+}
+
+input[type=text]{
+	width:150%;
+	height:50px;
+	font-size:20pt;
+	border:5px solid darkred;
+}
+
+div#suggest{
+	font-size:16pt;
+	border-style:solid;
+	border-width:1px;
+	border-color:lightgrey;
+	width:150%;
+	display:;
+	position:absolute;
+	top:100%;
+	background-color:white !important;
+	z-index:5;
+	box-shadow: 2px 2px 5px lightgrey;
+}
+
+ul.after-search{
+	margin:0;
+	padding:0;
+	position:relative;
+	width:30%;
+	top:0;
+	left:30% !important;
+	list-style:none;
+}
+
+.data-image{
+	height:100px;
+}
+
+.datas{
+	position:absolute;
+    width: 100%;
+	top:30%;
+}
+
+.data{
+	margin:0;
+	padding:0;
+	margin:auto;
+	padding:10px;
+	position:relative;
+	top:40%;
+	width:50%;
+	border-bottom: 1px dotted lightgrey;
+	overflow:auto;
+}
+
+.data > .first-column{
+	float:left;
+	margin-left:5%;
+}
+
+.data-name{
+	font-size:16pt;
+	font-weight:bold;
+}
+
+.data-region{
+	font-size:14pt;
+}
+
+#searchcon{
+	position:absolute;
+	top:25%;
+	left:140%;
+	cursor:pointer;
+}
+
+#after-searchcon{
+	position:absolute;
+	top:25%;
+	left:140%;
+	cursor:pointer;
+}
+
+.searchli:hover{
+	background-color:lightgrey;
+}

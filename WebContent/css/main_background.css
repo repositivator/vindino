@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+
+.intro {
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0;
+    text-align: center;
+    color: /*#FFF였음*/ white;
+    background: url("../winedata/main_back_gif.gif") no-repeat scroll; /* bottom center 있었음*/
+    background-color: /*까만색이었음*/ white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.intro .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+    width:100%;
+    height: 100%;
+}
+
+.intro .intro-body .brand-heading {
+    font-size: 40px;
+}
+
+.intro .intro-body .intro-text {
+    font-size: 18px;
+}
+
+@media(min-width:768px) {
+    .intro {
+        height: 100%;
+        padding: 0;
+    }
+
+    .intro .intro-body .brand-heading {
+        font-size: 100px;
+    }
+
+    .intro .intro-body .intro-text {
+        font-size: 26px;
+    }
+}
+
+div.bgmain{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}

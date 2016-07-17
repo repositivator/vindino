@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+body{
+	margin:0; padding:0; height:100%; width:100%;
+}
+
+.myhover{
+	background: #dbc3d0; 
+	color: #5e0231;
+	/* cursor: pointer; */ /* 커서를 포인터 형태 = 손가락&손 형태 로 바꿔준다. */
+}
+	
+#winelist_top{
+	height:100%; width:100%;
+	background-image: url("../winedata/winelist_background.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+}	
+
+/* #container{
+	
+	font-size: 1.2em;   1.2배 크기로 만들어주는 것
+	역사적으로 em이라는 단위는 인쇄 타이포그래피 분야에서 쓰이는 단위로 대문자 "M"를 글꼴 크기의 기준으로 사용하면서 유래되었습니다. 
+	Letter(문자의 형태) : M  &  Name(문자의 이름) : em  &  Pronunciation(문자의 발음) : /em/ // 라틴 알파벳에서는 원래 m문자의 명칭이 em이었다는 것 
+	margin: 10px 2em; 
+}
+h2{
+	margin-top: 1.5em;
+}
+.lavel{
+	width: 150px;
+	margin: .5em 0;
+} */
+	
+}

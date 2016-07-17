@@ -1,0 +1,127 @@
+drop table vd_admin;
+drop table vd_recommend;
+drop table vd_tastingnote;
+drop table vd_member;
+drop table vd_wine;
+
+
+/* 관리자 */
+CREATE TABLE vd_admin (
+   a_id INT NOT NULL, /* 아이디 */
+   a_passwd varchar(20) NOT NULL /* 비밀번호 */
+);
+
+ALTER TABLE vd_admin
+   ADD
+      CONSTRAINT PK_vd_admin
+      PRIMARY KEY (
+         a_id
+      );
+
+/* 회원 */
+CREATE TABLE vd_member (
+   member_no  INTEGER NOT NULL, /* 회원 등록번호 */
+   m_date  VARCHAR(20) NOT NULL, /* 가입일 */
+   m_id  VARCHAR(20) NOT NULL, /* 아이디 */
+   m_passwd  VARCHAR(20) NOT NULL, /* 패스워드 */
+   m_name  VARCHAR(30), /* 이름 */
+   m_email  VARCHAR(30), /* 이메일 */
+   m_phone  VARCHAR(30), /* 전화번호 */
+   m_gen  VARCHAR(20), /* 성별 */
+   m_birth  VARCHAR(20) /* 생년월일 */
+);
+
+ALTER TABLE vd_member
+   ADD
+      CONSTRAINT PK_vd_member
+      PRIMARY KEY (
+         member_no 
+      );
+
+/* 후기(테이스팅노트) */
+CREATE TABLE vd_tastingnote (
+   note_no  INTEGER NOT NULL, /* 후기 등록번호 */
+   nwine_no  INTEGER NOT NULL, /* 와인 등록번호 */
+   nmember_no  INTEGER NOT NULL, /* 회원 등록번호 */
+   n_date VARCHAR(20) NOT NULL, /* 등록일 */
+   n_color  VARCHAR(20), /* 색깔 */
+   n_aromas  VARCHAR(3000), /* 향기 */
+   n_body VARCHAR(10), /* 바디감 */
+   n_acidity  VARCHAR(10), /* 산도 */
+   n_bitter  VARCHAR(10), /* 쓴맛의 정도 */
+   n_sweet  VARCHAR(10), /* 단맛의 정도 */
+   n_points  INTEGER, /* 점수 */
+   n_exprice  INTEGER, /* 기대한 가격 */
+   n_comments  VARCHAR(5000), /* 자유 코멘트 */
+   n_likes INTEGER, /* 후기 추천수 */
+   n_dislikes INTEGER /* 후기 비추천수 */
+);
+
+ALTER TABLE vd_tastingnote
+   ADD
+      CONSTRAINT PK_vd_tastingnote
+      PRIMARY KEY (
+         note_no ,
+         nwine_no ,
+         nmember_no 
+      );
+
+/* 와인정보 */
+CREATE TABLE vd_wine (
+   wine_no  INTEGER NOT NULL, /* 와인 등록번호 */
+   w_name  VARCHAR(200) NOT NULL, /* 와인명 */
+   w_image VARCHAR(30), /* 와인 이미지 */
+   w_category  VARCHAR(15), /* 카테고리 */
+   w_variety  VARCHAR(300), /* 품종 */
+   w_vintage  VARCHAR(10), /* 빈티지(연도) */
+   w_region  VARCHAR(300), /* 생산지 */
+   w_alcohol  VARCHAR(10), /* 도수 */
+   w_color  VARCHAR(20), /* 색깔 */
+   w_aromas  VARCHAR(3000), /* 향기 */
+   w_body VARCHAR(10), /* 바디감 */
+   w_acidity  VARCHAR(10), /* 산도 */
+   w_bitter  VARCHAR(10), /* 쓴맛의 정도 */
+   w_sweet  VARCHAR(10), /* 단맛의 정도 */
+   w_price  INTEGER, /* 실제 가격 */
+   w_likes INTEGER /* 와인 좋아요 수(추천 수) */
+);
+
+ALTER TABLE vd_wine
+   ADD
+      CONSTRAINT PK_vd_wine
+      PRIMARY KEY (
+         wine_no 
+      );
+
+/* 추천결과리스트 */
+CREATE TABLE vd_recommend (
+   r_no  INTEGER NOT NULL, /* 추천결과 등록번호 */
+   rmember_no  INTEGER NOT NULL, /* 회원 등록번호 */
+   rwine_no  INTEGER NOT NULL, /* 와인 등록번호 */
+   r_date  VARCHAR(15) NOT NULL, /* 추천 일자 */
+   r_prefer  VARCHAR(10) NOT NULL /* 만족 여부 */
+);
+
+ALTER TABLE vd_recommend
+   ADD
+      CONSTRAINT PK_vd_recommend
+      PRIMARY KEY (
+         r_no ,
+         rmember_no ,
+         rwine_no ,
+         r_date 
+      );
+
+
+insert into vd_wine values(12, "카시에로 델 디아블로 레제르바", "12.jpg", "White", "Chardonnay", "2014", "칠레", "11", "맑은 연노랑", "사과향과 상큼한 바다향", "3", "4", "4", "1",18000,39);
+insert into vd_wine values(1, "마투아 쇼비뇽블랑", "1.jpg", "White", "Cauvignon Blanc", "2014", "뉴질랜드 말보로", "10", "녹차색", "상큼한 과일향", "2", "2", "1", "2",15000,21);
+insert into vd_wine values(8, "에어벤 아우스레제", "8.jpg", "White", "Riesling", "2013", "독일 라이네센", "12", "옐로우 그린", "자몽,토스트 냄새,풋사과,휘발유", "2", "2", "1", "3",11800,52);
+insert into vd_wine values(7, "로미또 델 로미또리오 산탄티모 로쏘", "7.jpg", "Red", "Sangiovese", "2010", "이탈리아", "10", "짙은 빨강", "시가, 오크, 후추, 산딸기", "2", "2", "2", "1",14900,82);
+insert into vd_wine values(9, "르그랑 피노누아", "9.jpg", "Red", "Pinot noir", "2013", "프랑스 리무", "12", "루비 레드", "체리 계피 나무 계피", "2", "2", "3", "1",10000,18);
+insert into vd_wine values(6, "트라피체 오크캐스크 말벡", "6.jpg", "Red", "Malbec", "2014", "아르헨티나", "15", "마호가니", "자두 체리 스모크 미네랄", "3", "2", "2", "1",13000,25);
+insert into vd_wine values(2, "로카세리나 모스카토 다스티", "2.jpg", "Sparkling", "Spumante", "2013", "이태리 아스티", "12", "옐로우 그린", "복숭아, 청사과", "2", "3", "1", "4",17000,98);
+insert into vd_wine values(10, "코블란츠 리슬링 트로켄", "10.jpg", "Sparkling", "Sekt", "2013", "독일 코블란츠", "9", "지푸라기색", "청사과, 식초, 허브, 배", "2", "3", "1", "2",14800,47);
+insert into vd_wine values(5, "모니스트롤 카바", "5.jpg", "Sparkling", "Cava", "2011", "스페인 페네데스", "10", "금색", "파인애플 신선한향", "2", "2", "2", "1",12000,102);
+insert into vd_wine values(3, "캐년로드 화이트 진판델", "3.jpg", "Rose", "Zinfandel", "2013", "미국 캘리포니아", "9", "맑은 자몽빛", "수박 딸기 사과 ", "2", "3", "1", "2",13000,62);
+insert into vd_wine values(11, "안젤리 로쏘", "11.jpg", "Rose", "Brachetto d'Acqui", "2013", "이탈리아 / 피에몬테", "11", "옅은 장미색", "베리(딸기)종류에 설탕섞은 시럽향", "2", "2", "1", "3",9800,47);
+insert into vd_wine values(4, "니더버그 파운데이션 로제", "4.jpg", "Rose", "Pinotage", "2013", "남아프리카공화국", "11", "복숭아색", "청사과 체리 수박 미네랄 오렌지 딸기 장미", "2", "3", "1", "2",8900,14);

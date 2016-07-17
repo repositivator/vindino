@@ -1,0 +1,133 @@
+@CHARSET "UTF-8";
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color:#5e0231;
+      border:0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #dbc3d0;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  
+  img#logo{
+  	margin-top:-5px;
+  	padding:0;
+  	height:30px;
+  }
+  
+  .navicon{
+  	width:25px;
+  }
+  .dropdown{
+ 	margin-top :12px;
+  	font-size: 13pt;
+  }
+  
+  .dropdown:ACTIVE{
+  	background-color: #5e0231;
+  }
+  
+  .dropdown-menu{
+  	background-color:#5e0231;
+  }
+  
+  .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+  	background-color:#5e0231;
+  }
+  .navicon{
+   width:25px;
+}
+
+.navSub, .navSub ul, .navSub ul li, .navSub ul li a {
+   margin : 0;
+   padding: 0:
+}
+
+ul.navTN li{
+   position: absolute;
+   top:0;
+   left:0;
+}
+ 
+
+.navSub > ul{
+   display: block;
+   position:relative;
+   width:150px;
+   list-style: none;
+}
+
+.navSub > ul li{
+   display: block;
+   position: relative;
+   list-style: none;
+}
+
+.navSub > ul li a{
+   display: block;
+   position: relative;
+   margin: 0;
+   border-bottom: 1px dotted #9d9d9d;
+   padding: 8px;
+   color: #9d9d9d;
+   text-decoration: none;
+   background-color:#5e0231; 
+}
+
+.navSub > ul li:hover > a{
+   color:#fff;
+   background-color: #000;
+   border-color: transparent;   
+}
+
+.navSub > ul ul{
+   position: absolute;
+   left:100%;
+   top:-10000px;
+   padding : 0px;
+   opacity:0;
+   width:150px;
+   list-style: none;
+}
+
+.navSub > ul li:hover > ul{
+   top:0;
+   opacity:1;
+   z-index:100;
+}
+
+
+li ul.navTN{
+   display:none;
+   position:absolute;
+   left:0;
+   background-color: #5e0231;
+   color:#9d9d9d;
+   list-style: none;
+   padding:0;
+   margin:0;
+   opacity:0;
+}
+
+li:hover ul.navTN{
+   display:block;
+   opacity:1;
+   z-index: 100;
+}

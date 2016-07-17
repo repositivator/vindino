@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+.btn {border:1x solid #ff0080; background-Color:#dac4cd; font:25px 굴림;  font-weight:bold; color:#435757;  width:30;height:30; }
+
+.card{
+width: 350px;
+height: 260px;
+border: 0px solid gray;
+box-shadow: 1px 1px 3px #888;
+border-top: 10px solid #dbc3d0;
+border-left: 5px solid #dbc3d0;
+background-color: #fff;
+min-height: 250px;
+padding: 0px;
+margin: 10px;
+opacity:0;
+}
+
+.card:hover{
+	cursor: pointer;
+}
+
+.contentCard{
+	width:100%; 
+	height:100%;
+	box-sizing:border-box; 
+	justify-content: center;
+	display:flex; 
+	flex-wrap:wrap;
+}
+
+img.cardImg{
+  width: 190px;
+  height: 120px;
+  margin: 15px 10px 10px 5px;
+  z-index:-1;
+}
+
+h2.cardH2{
+  color: #000;
+  font-weight: lighter;
+  margin-left: 203px;
+  margin-top: -125px;
+}
+
+table{
+	color: #000;
+	width: 330px;
+	
+}
+th{
+	text-align : left;
+}
+
+div.contexts{width : 330px; text-overflow:ellipsis;  overflow:hidden;}
+
+#mainbox{ position:absolute; top:20%; left:10%;font-family: calibri; box-sizing:border-box; justify-content: center;
+	display:flex; flex-wrap:wrap; width:80%; height:100%;}	
+
+.sword{
+	padding: 0;
+	margin:0;
+}
+
+div.page{
+	text-align:right;
+	margin : 7px 0 0 0;
+	width:86%;
+}	
+
+a.writeBtn{
+	float:left;
+	margin : 12px 0 0 0;
+	padding: 0;
+}	
+
+div#button{
+	margin-top:720px;
+	margin-left:48%;
+	padding:0;
+	float:bottom;
+	opacity:1;
+}
+
+#btnMore{
+	display:block;
+	position:absolute;
+	z-index:5;
+}
+
+a{
+	text-decoration: none;
+}
+
+div.context{
+  margin: 20px 10px 10px 10px;
+  font-family: segoe ui;
+  line-height: 1.4em;
+  font-size: 1.2em;
+}
